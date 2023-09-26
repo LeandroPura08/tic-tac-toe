@@ -13,6 +13,7 @@ body{
   column-gap: 2px;
 }
 .tile{
+  position: relative;
   justify-content: center;
   background-color: aqua;
   display: flex;
@@ -29,13 +30,31 @@ body{
 .tile:hover{
   background-color:green;
   color: black;
-  .move{
-    color: brown;
+  .forcss{
     display: block;
+    position: absolute;
+    color:red;
+    opacity: .7;
   }
 }
 .selected{
   display: block;
+}
+.added-result{
+  background-color: gray;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+.result{
+  display: flex;
+  flex-direction: column;
+}
+.forcss{
+  display: none;
 }
 
 

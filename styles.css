@@ -1,0 +1,41 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.board{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 2px;
+  column-gap: 2px;
+}
+.tile{
+  justify-content: center;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+  font-size: 90px;
+}
+.move{
+  display: none;
+}
+
+.tile:hover{
+  background-color:green;
+  color: black;
+  .move{
+    color: brown;
+    display: block;
+  }
+}
+.selected{
+  display: block;
+}
+
+

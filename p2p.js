@@ -150,7 +150,7 @@ function winner(count){
     document.querySelector('.result-container').classList.add("added-result");
     document.querySelector('.added-result').innerHTML =
    `<div class ="result">
-   <div>No Winner this Time</div>
+   <div class="result-comment">No Winner this Time</div>
    <button class="rematch">Rematch</button>
    </div>
    `

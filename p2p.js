@@ -8,13 +8,16 @@ let count = 0 ;
 
 document.querySelectorAll('.tile').forEach((tile)=>{
   tile.addEventListener('click',()=>{
+  
     count = count +1;
       const tilenumber = tile.dataset.tilenumber;
         document.querySelectorAll('.move').forEach((move)=>{
           const movenumber = move.dataset.movenumber;
             if(tilenumber === movenumber){
                 if(nextmove === "X" || nextmove === ""){
+                  document.getElementById("header").innerHTML ="Your Turn O";
                   nextmove = "X";
+                  
                   if(move.innerHTML === ""){
                     move.innerHTML = nextmove;
                     move.classList.add("selected");
@@ -30,10 +33,13 @@ document.querySelectorAll('.tile').forEach((tile)=>{
                     forcss.innerHTML=nextmove;
                   })
                 }else if(nextmove === "O"){
+                  document.getElementById("header").innerHTML ="X turns to move";
                   nextmove = "O";
+                  
                   if(move.innerHTML === ""){
                     move.innerHTML = nextmove;
                     move.classList.add("selected");
+                    
                     winner();
                     nextmove = "X";
                   }

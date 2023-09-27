@@ -3,7 +3,9 @@ document.querySelectorAll('.forcss').forEach((forcss)=>{
   nextmove = 'X';
   forcss.innerHTML=nextmove;
 })
+
 let count = 0 ;
+
 document.querySelectorAll('.tile').forEach((tile)=>{
   tile.addEventListener('click',()=>{
     count = count +1;

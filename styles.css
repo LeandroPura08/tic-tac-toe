@@ -27,6 +27,17 @@ body{
 .move{
   display: none;
 }
+.rematch{
+  cursor: pointer;
+  height: 40px;
+}
+.rematch:hover{
+  background-color: green;
+  color: white;
+}
+.result-comment{
+  color: white;
+  font-size: 50px;}
 
 .tile:hover{
   background-color:green;
@@ -42,9 +53,9 @@ body{
   display: block;
 }
 .added-result{
-  background-color: gray;
-  height: 400px;
-  width: 400px;
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,5 +72,68 @@ body{
 .header{
 color: aqua;
 }
+.board-container{
+  display: flex;
+  position: relative;
+}
+.striker-row1{
+  background-color: red;
+  height: 5px;
+  width: 100%;
+  top: 16.5%;
+  position: absolute;
+}
+.striker-row2{
+  background-color: red;
+  height: 5px;
+  width: 100%;
+  top: 49%;
+  position: absolute;
+}
+.striker-row3{
+  background-color: red;
+  height: 5px;
+  width: 100%;
+  top: 83%;
+  position: absolute;
+}
+.striker-col1{
+  background-color: red;
+  height: 100%;
+  width: 5px;
+  left: 16.5%;
+  position: absolute;
+}
+.striker-col2{
+  background-color: red;
+  height: 100%;
+  width: 5px;
+  left: 50%;
+  position: absolute;
+}
+.striker-col3{
+  background-color: red;
+  height: 100%;
+  width: 5px;
+  left: 83%;
+  position: absolute;
+}
+.striker-45deg{
+  background-color: red;
+  height: 5px;
+  width: 100%;
+  top: 50%;
+  position:absolute;
+  transform: rotate(45deg);
+}
+.striker-neg45deg{
+  background-color: red;
+  height: 5px;
+  width: 100%;
+  top: 50%;
+  position:absolute;
+  transform: rotate(-45deg);
+}
+
 
 

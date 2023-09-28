@@ -17,13 +17,16 @@
         <div class="p2p">Player To Player</div>
       </button>
       <button class="button">
-        <div class="vsComp">Player Vs Computer</div>
+        <div class="vsComp" id="pvc-button">Player Vs Computer</div>
       </button>
     </div>
   </div>
   <script>
     document.getElementById("p2p-button").addEventListener('click',()=>{
       location.href ="/p2p.html";
+    })
+    document.getElementById("pvc-button").addEventListener('click',()=>{
+      location.href ="pvc.html";
     })
 
   </script>

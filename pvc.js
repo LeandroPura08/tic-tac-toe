@@ -10,7 +10,7 @@
           }
         })
 
-        if(tilecount<9){
+        if(tilecount<0){
           document.querySelector('.choose-move').classList.add("ongoing");
         }
         else{

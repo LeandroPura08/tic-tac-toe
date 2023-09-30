@@ -37,13 +37,13 @@
           computermove = "X";
           document.querySelector('.choose-move').classList.add("ongoing");
           
-          startgame(computermove);
+          startgame(computermove,yourmove);
         })
         document.querySelector('.chosenX').addEventListener('click',()=>{
           yourmove = "X";
           computermove = "O";
           document.querySelector('.choose-move').classList.add("ongoing");
-          startgame(computermove);
+          startgame(computermove,yourmove);
         })
   }
 
@@ -59,12 +59,13 @@
                 move.innerHTML = yourmove;
                 move.classList.add("selected");
                 count = count +1;
+                document.getElementById('body').style.pointerEvents = 'none';
               }
           })
           setTimeout(()=>{
-            randomcomputermove(computermove);
-          },500);
-          tile.onclick=false;
+            randomcomputermove(computermove,yourmove);
+            document.getElementById('body').style.pointerEvents = 'auto';
+          },1000);
         })
       })
     }else if(yourmove === "O"){
@@ -78,10 +79,12 @@
                 move.innerHTML = yourmove;
                 move.classList.add("selected");
                 count = count +1;
+                document.getElementById('body').style.pointerEvents = 'none';
               }
           })
           setTimeout(()=>{
-            randomcomputermove(computermove);
+            randomcomputermove(computermove,yourmove);
+            document.getElementById('body').style.pointerEvents = 'auto';
           },500);
           
         })
@@ -89,7 +92,8 @@
     }
   }
 
-function randomcomputermove(computermove){
+  
+function randomcomputermove(computermove,yourmove){
   let id1 = document.getElementById("1");
   let id2 = document.getElementById("2");
   let id3 = document.getElementById("3");
@@ -100,80 +104,166 @@ function randomcomputermove(computermove){
   let id8 = document.getElementById("8");
   let id9 = document.getElementById("9");
 
-  let randomMove = Math.random();
-  if(randomMove >= 0 && randomMove < 1/9){
-    if(id1.innerHTML != ""){
-      randomcomputermove(computermove);
-    }else{
-      id1.classList.add("selected");
-      id1.innerHTML = computermove;
+  function randomselect(computermove){
+    let randomMove = Math.random();
+    if(randomMove >= 0 && randomMove < 1/9){
+      if(id1.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id1.classList.add("selected");
+        id1.innerHTML = computermove;
+      }
+    }else
+    if(randomMove >= 1/9 && randomMove < 2/9){
+      if(id2.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id2.classList.add("selected");
+        id2.innerHTML = computermove;
+      }
+    }else
+    if(randomMove >= 2/9 && randomMove < 3/9){
+      if(id3.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id3.classList.add("selected");
+        id3.innerHTML = computermove;
+      }
+    }else
+    if(randomMove >= 3/9 && randomMove < 4/9){
+      if(id4.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id4.classList.add("selected");
+        id4.innerHTML = computermove;
+      }
+    }else
+    if(randomMove >= 4/9 && randomMove < 5/9){
+      if(id5.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id5.classList.add("selected");
+        id5.innerHTML = computermove;
+      }
+    }else
+    if(randomMove >= 5/9 && randomMove < 6/9){
+      if(id6.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id6.classList.add("selected");
+        id6.innerHTML = computermove;
+      }
+    }else
+    if(randomMove >= 6/9 && randomMove < 7/9){
+      if(id7.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id7.classList.add("selected");
+        id7.innerHTML = computermove;
+      }
+    }else
+    if(randomMove >= 7/9 && randomMove < 8/9){
+      if(id8.innerHTML != ""){
+         randomselect(computermove);
+      }else{
+        id8.classList.add("selected");
+        id8.innerHTML = computermove;
+      }
+    }else
+    if(randomMove >= 8/9 && randomMove < 9){
+      if(id9.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+      id9.classList.add("selected");
+      id9.innerHTML = computermove;
+      }
     }
-  }else
-  if(randomMove >= 1/9 && randomMove < 2/9){
-    if(id2.innerHTML != ""){
-      randomcomputermove(computermove);
-    }else{
-      id2.classList.add("selected");
-      id2.innerHTML = computermove;
-    }
-  }else
-  if(randomMove >= 2/9 && randomMove < 3/9){
-    if(id3.innerHTML != ""){
-      randomcomputermove(computermove);
-    }else{
-      id3.classList.add("selected");
-      id3.innerHTML = computermove;
-    }
-  }else
-  if(randomMove >= 3/9 && randomMove < 4/9){
-    if(id4.innerHTML != ""){
-      randomcomputermove(computermove);
-    }else{
-      id4.classList.add("selected");
-      id4.innerHTML = computermove;
-    }
-  }else
-  if(randomMove >= 4/9 && randomMove < 5/9){
-    if(id5.innerHTML != ""){
-      randomcomputermove(computermove);
-    }else{
-      id5.classList.add("selected");
-      id5.innerHTML = computermove;
-    }
-  }else
-  if(randomMove >= 5/9 && randomMove < 6/9){
-    if(id6.innerHTML != ""){
-      randomcomputermove(computermove);
+  }
+  console.log(yourmove);
+
+  if(id1.innerHTML === yourmove && id2.innerHTML === yourmove ||
+    id1.innerHTML === computermove && id2.innerHTML === computermove ||
+    id6.innerHTML === yourmove && id9.innerHTML === yourmove ||
+    id6.innerHTML === computermove && id9.innerHTML === computermove ||
+    id7.innerHTML === yourmove && id5.innerHTML === yourmove ||
+    id7.innerHTML === computermove && id5.innerHTML === computermove){
+      if(id3.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id3.classList.add("selected");
+        id3.innerHTML = computermove;
+      }
+  }else if(id4.innerHTML === yourmove && id5.innerHTML === yourmove ||
+    id4.innerHTML === computermove && id5.innerHTML === computermove ||
+    id3.innerHTML === yourmove && id9.innerHTML === yourmove ||
+    id3.innerHTML === computermove && id9.innerHTML === computermove
+    ){
+      if(id6.innerHTML != ""){
+        randomselect(computermove);
     }else{
       id6.classList.add("selected");
       id6.innerHTML = computermove;
     }
-  }else
-  if(randomMove >= 6/9 && randomMove < 7/9){
-    if(id7.innerHTML != ""){
-      randomcomputermove(computermove);
-    }else{
-      id7.classList.add("selected");
-      id7.innerHTML = computermove;
-    }
-  }else
-  if(randomMove >= 7/9 && randomMove < 8/9){
-    if(id8.innerHTML != ""){
-      randomcomputermove(computermove);
-    }else{
-      id8.classList.add("selected");
-      id8.innerHTML = computermove;
-    }
-  }else
-  if(randomMove >= 8/9 && randomMove < 9){
-    if(id9.innerHTML != ""){
-      randomcomputermove(computermove);
-    }else{
-    id9.classList.add("selected");
-    id9.innerHTML = computermove;
-    }
+  }else if(id7.innerHTML === yourmove && id8.innerHTML === yourmove ||
+    id7.innerHTML === computermove && id8.innerHTML === computermove ||
+    id3.innerHTML === yourmove && id6.innerHTML === yourmove ||
+    id3.innerHTML === computermove && id6.innerHTML === computermove ||
+    id1.innerHTML === yourmove && id5.innerHTML === yourmove ||
+    id1.innerHTML === computermove && id5.innerHTML === computermove){
+      if(id9.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id9.classList.add("selected");
+        id9.innerHTML = computermove;
+      }
+  }else if(id4.innerHTML === yourmove && id6.innerHTML === yourmove ||
+    id4.innerHTML === computermove && id6.innerHTML === computermove ||
+    id2.innerHTML === yourmove && id8.innerHTML === yourmove ||
+    id2.innerHTML === computermove && id8.innerHTML === computermove ||
+    id7.innerHTML === yourmove && id3.innerHTML === yourmove ||
+    id7.innerHTML === computermove && id3.innerHTML === computermove){
+      if(id5.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id5.classList.add("selected");
+        id5.innerHTML = computermove;
+      }
+  }else if(id1.innerHTML === yourmove && id3.innerHTML === yourmove ||
+    id1.innerHTML === computermove && id3.innerHTML === computermove ||
+    id5.innerHTML === yourmove && id8.innerHTML === yourmove ||
+    id5.innerHTML === computermove && id8.innerHTML === computermove){
+      if(id2.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id2.classList.add("selected");
+        id2.innerHTML = computermove;
+      }
+  }else if(id7.innerHTML === yourmove && id9.innerHTML === yourmove ||
+    id7.innerHTML === computermove && id9.innerHTML === computermove ||
+    id2.innerHTML === yourmove && id5.innerHTML === yourmove ||
+    id2.innerHTML === computermove && id5.innerHTML === computermove){
+      if(id8.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id8.classList.add("selected");
+        id8.innerHTML = computermove;
+      }
+  }else if(id2.innerHTML === yourmove && id3.innerHTML === yourmove ||
+    id2.innerHTML === computermove && id3.innerHTML === computermove ||
+    id4.innerHTML === yourmove && id7.innerHTML === yourmove ||
+    id4.innerHTML === computermove && id7.innerHTML === computermove ||
+    id5.innerHTML === yourmove && id9.innerHTML === yourmove ||
+    id5.innerHTML === computermove && id9.innerHTML === computermove){
+      if(id1.innerHTML != ""){
+        randomselect(computermove);
+      }else{
+        id1.classList.add("selected");
+        id1.innerHTML = computermove;
+      }
   }
-  console.log(randomMove);
+  else{
+    randomselect(computermove);
+  }
 }
 chooseMove();
 

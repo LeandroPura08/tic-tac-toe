@@ -1,5 +1,9 @@
   let computermove = "";
   let yourmove = "";
+  document.querySelector('.backtomain').addEventListener('click',()=>{
+    location.href = "index.html";
+  })
+  
 
   function chooseMove(){
       let tilecount = 0;
@@ -69,7 +73,7 @@
                       randomcomputermove(computermove,yourmove);
                       winner(count,computermove,yourmove);
                       document.getElementById('body').style.pointerEvents = 'auto';
-                    },2000);
+                    },1000);
                   }else{
                     return false;
                   }
@@ -105,7 +109,7 @@
                         randomcomputermove(computermove,yourmove);
                         winner(count,computermove,yourmove);
                         document.getElementById('body').style.pointerEvents = 'auto';
-                      },2000);
+                      },1000);
                     }else{
                       return false;
                     }

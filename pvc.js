@@ -61,7 +61,9 @@
                   move.innerHTML = yourmove;
                   move.classList.add("selected");
                   count = count +1;
+                  console.log(yourmove,computermove,count);
                   document.getElementById('body').style.pointerEvents = 'none';
+                  winner(count,computermove,yourmove);
                   if(!winner(count,computermove,yourmove)){
                     setTimeout(()=>{
                       randomcomputermove(computermove,yourmove);
@@ -95,7 +97,9 @@
                     move.innerHTML = yourmove;
                     move.classList.add("selected");
                     count = count +1;
+                    console.log(yourmove,computermove,count);
                     document.getElementById('body').style.pointerEvents = 'none';
+                    winner(count,computermove,yourmove);
                     if(!winner(count,computermove,yourmove)){
                       setTimeout(()=>{
                         randomcomputermove(computermove,yourmove);
@@ -531,28 +535,29 @@ function winner(count,computermove,yourmove){
    return true;
  })
  }else{
-  return false;
+  if (count === 9){
+    const winner = document.querySelector('.result-container').innerHTML;
+    if (!winner){
+      document.querySelector('.result-container').classList.add("added-result");
+      document.querySelector('.added-result').innerHTML =
+     `<div class ="result">
+     <div class="result-comment">No Winner this Time</div>
+     <button class="rematch">Rematch</button>
+     </div>
+     `
+     document.querySelector('.rematch').addEventListener('click',()=>{
+      document.querySelector('.result-container').classList.remove("added-result");
+      document.querySelector('.result-container').innerHTML = "";
+      clear();
+      
+    })
+    }
+   }
+    return false;
  }
 
- if (count === 9){
-  const winner = document.querySelector('.result-container').innerHTML;
-  if (!winner){
-    document.querySelector('.result-container').classList.add("added-result");
-    document.querySelector('.added-result').innerHTML =
-   `<div class ="result">
-   <div class="result-comment">No Winner this Time</div>
-   <button class="rematch">Rematch</button>
-   </div>
-   `
-   document.querySelector('.rematch').addEventListener('click',()=>{
-    document.querySelector('.result-container').classList.remove("added-result");
-    document.querySelector('.result-container').innerHTML = "";
-    clear();
-    
-  })
-  }
-  return true;
- }
+
+
 }
 
 

@@ -103,124 +103,232 @@ function randomcomputermove(computermove,yourmove){
   let id8 = document.getElementById("8");
   let id9 = document.getElementById("9");
 
-  switch (conditions) {
-    case 1 : 
-    
-
-  }
-
-    if((id1.innerHTML === computermove && id2.innerHTML === computermove)||
-    (id6.innerHTML === computermove && id9.innerHTML === computermove) ||
-    (id7.innerHTML === computermove && id5.innerHTML === computermove) || 
-    (id1.innerHTML === yourmove && id2.innerHTML === yourmove) ||
-    (id6.innerHTML === yourmove && id9.innerHTML === yourmove) ||
-    (id7.innerHTML === yourmove && id5.innerHTML === yourmove)){
-      if(id3.innerHTML != ""){
-        continue;
-      }else{
-        id3.classList.add("selected");
-        id3.innerHTML = computermove;
-      }
-  }else if((id4.innerHTML === computermove && id5.innerHTML === computermove) ||
-    (id4.innerHTML === yourmove && id5.innerHTML === yourmove) ||
-    (id3.innerHTML === computermove && id9.innerHTML === computermove) ||
-    (id3.innerHTML === yourmove && id9.innerHTML === yourmove)
-    ){
-      if(id6.innerHTML != ""){
-        continue;
-      id6.classList.add("selected");
-      id6.innerHTML = computermove;
-    }
-  }else if((id7.innerHTML === computermove && id8.innerHTML === computermove) ||
-  (id3.innerHTML === computermove && id6.innerHTML === computermove) ||
-  (id1.innerHTML === computermove && id5.innerHTML === computermove) ||
-    (id7.innerHTML === yourmove && id8.innerHTML === yourmove) ||
-    (id3.innerHTML === yourmove && id6.innerHTML === yourmove) ||
-    (id1.innerHTML === yourmove && id5.innerHTML === yourmove)){
-      if(id9.innerHTML != ""){
-        continue;
-      }else{
-        id9.classList.add("selected");
-        id9.innerHTML = computermove;
-      }
-  }else if((id4.innerHTML === computermove && id6.innerHTML === computermove)||
-  (id2.innerHTML === computermove && id8.innerHTML === computermove) ||
-  (id7.innerHTML === computermove && id3.innerHTML === computermove) ||
-  (id1.innerHTML === computermove && id9.innerHTML === computermove) ||
-    (id4.innerHTML === yourmove && id6.innerHTML === yourmove) ||
-    (id2.innerHTML === yourmove && id8.innerHTML === yourmove) ||
-    (id7.innerHTML === yourmove && id3.innerHTML === yourmove) ||
-    (id1.innerHTML === yourmove && id9.innerHTML === yourmove)){
-      if(id5.innerHTML != ""){
-        continue;
-      }else{
-        id5.classList.add("selected");
-        id5.innerHTML = computermove;
-      }
-  }else if((id1.innerHTML === computermove && id3.innerHTML === computermove || id3.innerHTML === computermove && id1.innerHTML === computermove) ||
-    (id5.innerHTML === computermove && id8.innerHTML === computermove || id8.innerHTML === computermove && id5.innerHTML === computermove) ||
-    (id1.innerHTML === yourmove && id3.innerHTML === yourmove || id3.innerHTML === yourmove && id1.innerHTML === yourmove) ||
-    (id5.innerHTML === yourmove && id8.innerHTML === yourmove || id8.innerHTML === yourmove && id5.innerHTML === yourmove)){
-      if(id2.innerHTML != ""){
-        continue;
-      }else{
-        id2.classList.add("selected");
-        id2.innerHTML = computermove;
-      }
-  }else if((id7.innerHTML === computermove && id9.innerHTML === computermove)||
-    (id2.innerHTML === computermove && id5.innerHTML === computermove) ||
-    (id7.innerHTML === yourmove && id9.innerHTML === yourmove) ||
-    (id2.innerHTML === yourmove && id5.innerHTML === yourmove)){
-      if(id8.innerHTML != ""){
-        continue;
-      }else{
-        id8.classList.add("selected");
-        id8.innerHTML = computermove;
-      }
-  }else if((id2.innerHTML === computermove && id3.innerHTML === computermove) || (id3.innerHTML === computermove && id2.innerHTML === computermove) ||
-    (id4.innerHTML === computermove && id7.innerHTML === computermove) || (id7.innerHTML === computermove && id4.innerHTML === computermove) ||
-    (id5.innerHTML === computermove && id9.innerHTML === computermove) || (id9.innerHTML === computermove && id5.innerHTML === computermove) ||
-    (id2.innerHTML === yourmove && id3.innerHTML === yourmove) || (id3.innerHTML === yourmove && id2.innerHTML === yourmove) ||
-    (id4.innerHTML === yourmove && id7.innerHTML === yourmove) || (id7.innerHTML === yourmove && id4.innerHTML === yourmove) ||
-    (id5.innerHTML === yourmove && id9.innerHTML === yourmove) || (id9.innerHTML === yourmove && id5.innerHTML === yourmove)){
-      if(id1.innerHTML != ""){
-        continue;
-      }else{
-        id1.classList.add("selected");
-        id1.innerHTML = computermove;
-      }
-  }else if((id7.innerHTML === computermove && id1.innerHTML === computermove)||
-    (id5.innerHTML === computermove && id6.innerHTML === computermove) ||
-    (id7.innerHTML === yourmove && id1.innerHTML === yourmove) ||
-    (id5.innerHTML === yourmove && id6.innerHTML === yourmove)
-    ){
-      if(id4.innerHTML != ""){
-        continue;
-      }else{
-        id4.classList.add("selected");
-        id4.innerHTML = computermove;
-      }
-  }else if((id5.innerHTML === computermove && id3.innerHTML === computermove) || (id3.innerHTML === computermove && id5.innerHTML === computermove) ||
-  (id4.innerHTML === computermove && id1.innerHTML === computermove) || (id1.innerHTML === computermove && id4.innerHTML === computermove) ||
-  (id8.innerHTML === computermove && id9.innerHTML === computermove) || (id9.innerHTML === computermove && id8.innerHTML === computermove) ||
-    (id5.innerHTML === yourmove && id3.innerHTML === yourmove) || (id3.innerHTML === yourmove && id5.innerHTML === yourmove) ||
-    (id4.innerHTML === yourmove && id1.innerHTML === yourmove) || (id1.innerHTML === yourmove && id4.innerHTML === yourmove) ||
-    (id8.innerHTML === yourmove && id9.innerHTML === yourmove) || (id9.innerHTML === yourmove && id8.innerHTML === yourmove)
-    ){
-      if(id7.innerHTML != ""){
-        continue;
-      }else{
-        id7.classList.add("selected");
-        id7.innerHTML = computermove;
-      }
-  }
-  else{
+  if(id1if()){
+    id1.classList.add("selected");
+    id1.innerHTML = computermove;
+  }else if(id2if()){
+    id2.classList.add("selected");
+    id2.innerHTML = computermove;
+  }else if(id3if()){
+    id3.classList.add("selected");
+    id3.innerHTML = computermove;
+  }else if(id4if()){
+    id4.classList.add("selected");
+    id4.innerHTML = computermove;
+  }else if(id5if()){
+    id5.classList.add("selected");
+    id5.innerHTML = computermove;
+  }else if(id6if()){
+    id6.classList.add("selected");
+    id6.innerHTML = computermove;
+  }else if(id7if()){
+    id7.classList.add("selected");
+    id7.innerHTML = computermove;
+  }else if(id8if()){
+    id8.classList.add("selected");
+    id8.innerHTML = computermove;
+  }else if(id9if()){
+    id9.classList.add("selected");
+    id9.innerHTML = computermove;
+  }else{
     randomselect(computermove);
   }
-
   
 
-  
+
+
+
+
+  function id1if(){
+    if((id2.innerHTML === computermove && id3.innerHTML === computermove) || (id3.innerHTML === computermove && id2.innerHTML === computermove) ||
+    (id4.innerHTML === computermove && id7.innerHTML === computermove) || (id7.innerHTML === computermove && id4.innerHTML === computermove) ||
+    (id5.innerHTML === computermove && id9.innerHTML === computermove) || (id9.innerHTML === computermove && id5.innerHTML === computermove)){
+      if(id1.innerHTML === ""){
+        return true;
+      } else{
+        return false;
+      }
+    }else if(
+      (id2.innerHTML === yourmove && id3.innerHTML === yourmove) || (id3.innerHTML === yourmove && id2.innerHTML === yourmove) ||
+      (id4.innerHTML === yourmove && id7.innerHTML === yourmove) || (id7.innerHTML === yourmove && id4.innerHTML === yourmove) ||
+      (id5.innerHTML === yourmove && id9.innerHTML === yourmove) || (id9.innerHTML === yourmove && id5.innerHTML === yourmove)){
+          if(id1.innerHTML === ""){
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+    }
+
+  function id2if(){
+    if((id1.innerHTML === computermove && id3.innerHTML === computermove || id3.innerHTML === computermove && id1.innerHTML === computermove) ||
+      (id5.innerHTML === computermove && id8.innerHTML === computermove || id8.innerHTML === computermove && id5.innerHTML === computermove)){
+        if(id2.innerHTML === ""){
+          return true;
+        }  else{
+          return false;
+        }
+      }else if((id1.innerHTML === yourmove && id3.innerHTML === yourmove || id3.innerHTML === yourmove && id1.innerHTML === yourmove) ||
+        (id5.innerHTML === yourmove && id8.innerHTML === yourmove || id8.innerHTML === yourmove && id5.innerHTML === yourmove)){
+          if(id2.innerHTML === ""){
+            return true;
+          }
+          else{
+            return false;
+          }
+      }
+  }
+
+  function id3if(){
+    if((id1.innerHTML === computermove && id2.innerHTML === computermove)||
+    (id6.innerHTML === computermove && id9.innerHTML === computermove) ||
+    (id7.innerHTML === computermove && id5.innerHTML === computermove)){
+      if(id3.innerHTML === ""){
+        return true;
+       } else{
+        return false;
+      }
+      }else if((id1.innerHTML === yourmove && id2.innerHTML === yourmove) ||
+       (id6.innerHTML === yourmove && id9.innerHTML === yourmove) ||
+       (id7.innerHTML === yourmove && id5.innerHTML === yourmove)){
+        if(id3.innerHTML === ""){
+          return true;
+         }
+         else{
+           return false;
+         }
+       }
+  }
+
+  function id4if(){
+    if((id7.innerHTML === computermove && id1.innerHTML === computermove)||
+      (id5.innerHTML === computermove && id6.innerHTML === computermove)){
+        if(id4.innerHTML === ""){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+      else if((id7.innerHTML === yourmove && id1.innerHTML === yourmove) ||
+         (id5.innerHTML === yourmove && id6.innerHTML === yourmove)){
+            if(id4.innerHTML === ""){
+              return true;
+            }
+            else{
+              return false;
+            }
+        }
+  }
+
+  function id5if(){
+    if((id4.innerHTML === computermove && id6.innerHTML === computermove)||
+    (id2.innerHTML === computermove && id8.innerHTML === computermove) ||
+    (id7.innerHTML === computermove && id3.innerHTML === computermove) ||
+    (id1.innerHTML === computermove && id9.innerHTML === computermove)){
+      if(id5.innerHTML === ""){
+      return true;
+      }
+      else{
+        return false;
+      }
+    }else if((id4.innerHTML === yourmove && id6.innerHTML === yourmove) ||
+      (id2.innerHTML === yourmove && id8.innerHTML === yourmove) ||
+      (id7.innerHTML === yourmove && id3.innerHTML === yourmove) ||
+      (id1.innerHTML === yourmove && id9.innerHTML === yourmove)){
+        if(id5.innerHTML === ""){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+  }
+
+  function id6if(){
+    if((id4.innerHTML === computermove && id5.innerHTML === computermove) ||
+    (id3.innerHTML === computermove && id9.innerHTML === computermove)){
+      if(id6.innerHTML === ""){
+        return true;
+       }
+       else{
+        return false;
+      }
+      }else if((id4.innerHTML === yourmove && id5.innerHTML === yourmove) ||
+       (id3.innerHTML === yourmove && id9.innerHTML === yourmove)){
+        if(id6.innerHTML === ""){
+          return true;
+         }
+         else{
+           return false;
+         }
+       }
+  }
+
+  function id7if(){
+    if((id5.innerHTML === computermove && id3.innerHTML === computermove) || (id3.innerHTML === computermove && id5.innerHTML === computermove) ||
+    (id4.innerHTML === computermove && id1.innerHTML === computermove) || (id1.innerHTML === computermove && id4.innerHTML === computermove) ||
+    (id8.innerHTML === computermove && id9.innerHTML === computermove) || (id9.innerHTML === computermove && id8.innerHTML === computermove)){
+      if(id7.innerHTML === ""){
+        return true;
+      }  else{
+        return false;
+      }
+    }else if((id5.innerHTML === yourmove && id3.innerHTML === yourmove) || (id3.innerHTML === yourmove && id5.innerHTML === yourmove) ||
+        (id4.innerHTML === yourmove && id1.innerHTML === yourmove) || (id1.innerHTML === yourmove && id4.innerHTML === yourmove) ||
+        (id8.innerHTML === yourmove && id9.innerHTML === yourmove) || (id9.innerHTML === yourmove && id8.innerHTML === yourmove)){
+          if(id7.innerHTML === ""){
+            return true;
+          }
+          else{
+            return false;
+          }
+      }
+  }
+
+  function id8if(){
+    if((id7.innerHTML === computermove && id9.innerHTML === computermove)||
+    (id2.innerHTML === computermove && id5.innerHTML === computermove)){
+      if(id8.innerHTML === ""){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }else if((id7.innerHTML === yourmove && id9.innerHTML === yourmove) ||
+      (id2.innerHTML === yourmove && id5.innerHTML === yourmove)){
+        if(id8.innerHTML === ""){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+  }
+
+  function id9if(){
+    if((id7.innerHTML === computermove && id8.innerHTML === computermove) ||
+    (id3.innerHTML === computermove && id6.innerHTML === computermove) ||
+    (id1.innerHTML === computermove && id5.innerHTML === computermove)){
+      if(id9.innerHTML === ""){
+        return true;
+       }
+       else{
+        return false;
+      }
+      }else if((id7.innerHTML === yourmove && id8.innerHTML === yourmove) ||
+        (id3.innerHTML === yourmove && id6.innerHTML === yourmove) ||
+        (id1.innerHTML === yourmove && id5.innerHTML === yourmove)){
+          if(id9.innerHTML === ""){
+            return true;
+           }
+           else{
+             return false;
+           }
+       }
+  }
+
   function randomselect(computermove){
     let randomMove = Math.random();
     if(randomMove >= 0 && randomMove < 1/9){
@@ -296,7 +404,7 @@ function randomcomputermove(computermove,yourmove){
       }
     }
   }
-  console.log(yourmove);
+  console.log(yourmove,computermove);
 }
 chooseMove();
 

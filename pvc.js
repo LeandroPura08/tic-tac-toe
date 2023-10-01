@@ -57,18 +57,23 @@
           document.querySelectorAll('.move').forEach((move)=>{
             const movenumber = move.dataset.movenumber;
               if(tilenumber === movenumber){
-                move.innerHTML = yourmove;
-                move.classList.add("selected");
-                count = count +1;
-                document.getElementById('body').style.pointerEvents = 'none';
-                if(!winner(count,computermove,yourmove)){
-                  setTimeout(()=>{
-                    randomcomputermove(computermove,yourmove);
-                    winner(count,computermove,yourmove);
-                    document.getElementById('body').style.pointerEvents = 'auto';
-                  },2000);
+                if(move.innerHTML ===""){
+                  move.innerHTML = yourmove;
+                  move.classList.add("selected");
+                  count = count +1;
+                  document.getElementById('body').style.pointerEvents = 'none';
+                  if(!winner(count,computermove,yourmove)){
+                    setTimeout(()=>{
+                      randomcomputermove(computermove,yourmove);
+                      winner(count,computermove,yourmove);
+                      document.getElementById('body').style.pointerEvents = 'auto';
+                    },2000);
+                  }else{
+                    return false;
+                  }
                 }else{
-                  return false;
+                  alert("Already Selected");
+                  return;
                 }
               }
           })
@@ -86,18 +91,24 @@
             document.querySelectorAll('.move').forEach((move)=>{
               const movenumber = move.dataset.movenumber;
                 if(tilenumber === movenumber){
-                  move.innerHTML = yourmove;
-                  move.classList.add("selected");
-                  count = count +1;
-                  document.getElementById('body').style.pointerEvents = 'none';
-                  if(!winner(count,computermove,yourmove)){
-                    setTimeout(()=>{
-                      randomcomputermove(computermove,yourmove);
-                      winner(count,computermove,yourmove);
-                      document.getElementById('body').style.pointerEvents = 'auto';
-                    },2000);
+                  if(move.innerHTML ===""){
+                    move.innerHTML = yourmove;
+                    move.classList.add("selected");
+                    count = count +1;
+                    document.getElementById('body').style.pointerEvents = 'none';
+                    if(!winner(count,computermove,yourmove)){
+                      setTimeout(()=>{
+                        randomcomputermove(computermove,yourmove);
+                        winner(count,computermove,yourmove);
+                        document.getElementById('body').style.pointerEvents = 'auto';
+                      },2000);
+                    }else{
+                      return false;
+                    }
+
                   }else{
-                    return false;
+                    alert("Already Selected");
+                    return;
                   }
                 }
             })
@@ -117,6 +128,7 @@
   
 function randomcomputermove(computermove,yourmove){
   count = count +1;
+  if(count<=9 && winner(count,computermove,yourmove)==false){
   let id1 = document.getElementById("1");
   let id2 = document.getElementById("2");
   let id3 = document.getElementById("3");
@@ -424,6 +436,11 @@ function randomcomputermove(computermove,yourmove){
       }
     }
   }
+  
+}
+else{
+  return;
+}
   console.log(yourmove,computermove,count);
 }
 chooseMove();
@@ -496,7 +513,7 @@ function winner(count,computermove,yourmove){
      document.querySelector('.result-container').classList.remove("added-result");
      document.querySelector('.result-container').innerHTML = "";
      clear();
-     return;
+     return true;
    })
  }
  else if(orow1 || orow2 || orow3 || ocol1 || ocol2 || ocol3 || o45 || oneg45){
@@ -511,8 +528,10 @@ function winner(count,computermove,yourmove){
    document.querySelector('.result-container').classList.remove("added-result");
    document.querySelector('.result-container').innerHTML = "";
    clear();
-   return;
+   return true;
  })
+ }else{
+  return false;
  }
 
  if (count === 9){
@@ -532,7 +551,7 @@ function winner(count,computermove,yourmove){
     
   })
   }
-  return;
+  return true;
  }
 }
 

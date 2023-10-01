@@ -50,6 +50,7 @@
   let count = 0 ;
   function startgame(computermove,yourmove){
     if(yourmove === "X"){
+      if(!winner(count,computermove,yourmove)){
       document.querySelectorAll('.tile').forEach((tile)=>{
         tile.addEventListener('click',()=>{
           const tilenumber = tile.dataset.tilenumber;
@@ -60,39 +61,62 @@
                 move.classList.add("selected");
                 count = count +1;
                 document.getElementById('body').style.pointerEvents = 'none';
-                setTimeout(()=>{
-                  randomcomputermove(computermove,yourmove);
-                  document.getElementById('body').style.pointerEvents = 'auto';
-                },2000);
+                if(!winner(count,computermove,yourmove)){
+                  setTimeout(()=>{
+                    randomcomputermove(computermove,yourmove);
+                    winner(count,computermove,yourmove);
+                    document.getElementById('body').style.pointerEvents = 'auto';
+                  },2000);
+                }else{
+                  return false;
+                }
               }
           })
         })
       })
-    }else if(yourmove === "O"){
-      randomcomputermove(computermove,yourmove);
-      document.querySelectorAll('.tile').forEach((tile)=>{
-        tile.addEventListener('click',()=>{
-          const tilenumber = tile.dataset.tilenumber;
-          document.querySelectorAll('.move').forEach((move)=>{
-            const movenumber = move.dataset.movenumber;
-              if(tilenumber === movenumber){
-                move.innerHTML = yourmove;
-                move.classList.add("selected");
-                count = count +1;
-                document.getElementById('body').style.pointerEvents = 'none';
-                setTimeout(()=>{
-                  randomcomputermove(computermove,yourmove);
-                  document.getElementById('body').style.pointerEvents = 'auto';
-                },2000);
-              }
-          })
-        })
-      })
+    }else{
+      return;
     }
+    }else if(yourmove === "O"){
+      if(!winner(count,computermove,yourmove)){
+        randomcomputermove(computermove,yourmove);
+        document.querySelectorAll('.tile').forEach((tile)=>{
+          tile.addEventListener('click',()=>{
+            const tilenumber = tile.dataset.tilenumber;
+            document.querySelectorAll('.move').forEach((move)=>{
+              const movenumber = move.dataset.movenumber;
+                if(tilenumber === movenumber){
+                  move.innerHTML = yourmove;
+                  move.classList.add("selected");
+                  count = count +1;
+                  document.getElementById('body').style.pointerEvents = 'none';
+                  if(!winner(count,computermove,yourmove)){
+                    setTimeout(()=>{
+                      randomcomputermove(computermove,yourmove);
+                      winner(count,computermove,yourmove);
+                      document.getElementById('body').style.pointerEvents = 'auto';
+                    },2000);
+                  }else{
+                    return false;
+                  }
+                }
+            })
+          })
+        })
+      }else{
+        return;
+      }
+    }
+  }
+
+  function clear(){
+    document.getElementById("1","2","3","4","5","6","7","8","9").innerHTML = "";
+    location.reload();
   }
 
   
 function randomcomputermove(computermove,yourmove){
+  count = count +1;
   let id1 = document.getElementById("1");
   let id2 = document.getElementById("2");
   let id3 = document.getElementById("3");
@@ -134,10 +158,6 @@ function randomcomputermove(computermove,yourmove){
     randomselect(computermove);
   }
   
-
-
-
-
 
   function id1if(){
     if((id2.innerHTML === computermove && id3.innerHTML === computermove) || (id3.innerHTML === computermove && id2.innerHTML === computermove) ||
@@ -404,9 +424,118 @@ function randomcomputermove(computermove,yourmove){
       }
     }
   }
-  console.log(yourmove,computermove);
+  console.log(yourmove,computermove,count);
 }
 chooseMove();
+
+function winner(count,computermove,yourmove){
+  let id1 = document.getElementById("1").innerHTML;
+  let id2 = document.getElementById("2").innerHTML;
+  let id3 = document.getElementById("3").innerHTML;
+  let id4 = document.getElementById("4").innerHTML;
+  let id5 = document.getElementById("5").innerHTML;
+  let id6 = document.getElementById("6").innerHTML;
+  let id7 = document.getElementById("7").innerHTML;
+  let id8 = document.getElementById("8").innerHTML;
+  let id9 = document.getElementById("9").innerHTML;
+
+  //computer winning conditions
+  const xrow1 = id1=== computermove && id2 === computermove && id3 === computermove;
+  const xrow2 = id4 === computermove && id5 === computermove  && id6 === computermove;
+  const xrow3 = id7 === computermove && id8 === computermove  && id9 === computermove;
+  const xcol1 = id1 === computermove && id4 === computermove  && id7 === computermove;
+  const xcol2 = id2 === computermove &&  id5 === computermove && id8 === computermove;
+  const xcol3 = id3 === computermove && id6 === computermove && id9 === computermove;
+  const x45 = id1 === computermove && id5 === computermove && id9 === computermove;
+  const xneg45 = id7 === computermove && id5 === computermove && id3 === computermove;
+
+  //Player winning conditions
+  const orow1 = id1=== yourmove && id2 === yourmove && id3 === yourmove;
+  const orow2 = id4 === yourmove && id5 === yourmove  && id6 === yourmove;
+  const orow3 = id7 === yourmove && id8 === yourmove  && id9 === yourmove;
+  const ocol1 = id1 === yourmove && id4 === yourmove  && id7 === yourmove;
+  const ocol2 = id2 === yourmove &&  id5 === yourmove && id8 === yourmove;
+  const ocol3 = id3 === yourmove && id6 === yourmove && id9 === yourmove;
+  const o45 = id1 === yourmove && id5 === yourmove && id9 === yourmove;
+  const oneg45 = id7 === yourmove && id5 === yourmove && id3 === yourmove;
+
+  if(xrow1 || orow1){
+    document.querySelector('.striker').classList.add("striker-row1");
+  }else
+  if(xrow2 || orow2){
+    document.querySelector('.striker').classList.add("striker-row2");
+  }else
+  if(xrow3 || orow3){
+    document.querySelector('.striker').classList.add("striker-row3");
+  }else
+  if(xcol1 || ocol1){
+    document.querySelector('.striker').classList.add("striker-col1");
+  }else
+  if(xcol2 || ocol2){
+    document.querySelector('.striker').classList.add("striker-col2");
+  }else
+  if(xcol3 || ocol3){
+    document.querySelector('.striker').classList.add("striker-col3");
+  }else
+  if(x45 || o45){
+    document.querySelector('.striker').classList.add("striker-45deg");
+  }else
+  if(xneg45 || oneg45){
+    document.querySelector('.striker').classList.add("striker-neg45deg");
+  }
+
+    if(xrow1 || xrow2 || xrow3 || xcol1 || xcol2 || xcol3 || x45 || xneg45){
+   document.querySelector('.result-container').classList.add("added-result");
+   document.querySelector('.added-result').innerHTML =
+   `<div class ="result">
+      <div class="result-comment">Computer is the Winner</div>
+      <button class="rematch">Rematch</button>
+   </div>
+   `
+   document.querySelector('.rematch').addEventListener('click',()=>{
+     document.querySelector('.result-container').classList.remove("added-result");
+     document.querySelector('.result-container').innerHTML = "";
+     clear();
+     return;
+   })
+ }
+ else if(orow1 || orow2 || orow3 || ocol1 || ocol2 || ocol3 || o45 || oneg45){
+   document.querySelector('.result-container').classList.add("added-result");
+   document.querySelector('.added-result').innerHTML =
+  `<div class ="result">
+      <div class="result-comment">You are the Winner</div>
+      <button class="rematch">Rematch</button>
+  </div>
+  `
+  document.querySelector('.rematch').addEventListener('click',()=>{
+   document.querySelector('.result-container').classList.remove("added-result");
+   document.querySelector('.result-container').innerHTML = "";
+   clear();
+   return;
+ })
+ }
+
+ if (count === 9){
+  const winner = document.querySelector('.result-container').innerHTML;
+  if (!winner){
+    document.querySelector('.result-container').classList.add("added-result");
+    document.querySelector('.added-result').innerHTML =
+   `<div class ="result">
+   <div class="result-comment">No Winner this Time</div>
+   <button class="rematch">Rematch</button>
+   </div>
+   `
+   document.querySelector('.rematch').addEventListener('click',()=>{
+    document.querySelector('.result-container').classList.remove("added-result");
+    document.querySelector('.result-container').innerHTML = "";
+    clear();
+    
+  })
+  }
+  return;
+ }
+}
+
 
 
 

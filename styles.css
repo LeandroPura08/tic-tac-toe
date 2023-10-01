@@ -6,6 +6,7 @@ body{
   justify-content: center;
   align-items: center;
   background-color: black;
+  position: relative;
 }
 .board{
   display: grid;
@@ -133,6 +134,23 @@ color: aqua;
   top: 50%;
   position:absolute;
   transform: rotate(-45deg);
+}
+.backtomain{
+  border: 1px solid;
+  right: 2px;
+  justify-content: center;
+  background-color: white;
+  display: flex;
+  height: 30px;
+  width: 100px;
+  align-items: center;
+  position:absolute;
+  top: 5px;
+}
+.backtomain:hover{
+  cursor: pointer;
+  color: white;
+  background-color: black;
 }
 
 

@@ -4,6 +4,10 @@ document.querySelectorAll('.forcss').forEach((forcss)=>{
   forcss.innerHTML=nextmove;
 })
 
+document.querySelector('.backtomain').addEventListener('click',()=>{
+  location.href = "index.html";
+})
+
 
 let count = 0 ;
 document.querySelectorAll('.tile').forEach((tile)=>{

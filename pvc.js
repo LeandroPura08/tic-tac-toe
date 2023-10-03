@@ -147,39 +147,66 @@ function randomcomputermove(computermove,yourmove){
   let id8 = document.getElementById("8");
   let id9 = document.getElementById("9");
 
-  if(id1if()){
+  if(id1ifcomp()){
     id1.classList.add("selected");
     id1.innerHTML = computermove;
-  }else if(id2if()){
+  }else if(id2ifcomp()){
     id2.classList.add("selected");
     id2.innerHTML = computermove;
-  }else if(id3if()){
+  }else if(id3ifcomp()){
     id3.classList.add("selected");
     id3.innerHTML = computermove;
-  }else if(id4if()){
+  }else if(id4ifcomp()){
     id4.classList.add("selected");
     id4.innerHTML = computermove;
-  }else if(id5if()){
+  }else if(id5ifcomp()){
     id5.classList.add("selected");
     id5.innerHTML = computermove;
-  }else if(id6if()){
+  }else if(id6ifcomp()){
     id6.classList.add("selected");
     id6.innerHTML = computermove;
-  }else if(id7if()){
+  }else if(id7ifcomp()){
     id7.classList.add("selected");
     id7.innerHTML = computermove;
-  }else if(id8if()){
+  }else if(id8ifcomp()){
     id8.classList.add("selected");
     id8.innerHTML = computermove;
-  }else if(id9if()){
+  }else if(id9ifcomp()){
     id9.classList.add("selected");
     id9.innerHTML = computermove;
+  }else if(id1ifyou()){
+      id1.classList.add("selected");
+      id1.innerHTML = computermove;
+  }else if(id2ifyou()){
+      id2.classList.add("selected");
+      id2.innerHTML = computermove;
+  }else if(id3ifyou()){
+      id3.classList.add("selected");
+      id3.innerHTML = computermove;
+  }else if(id4ifyou()){
+      id4.classList.add("selected");
+      id4.innerHTML = computermove;
+  }else if(id5ifyou()){
+      id5.classList.add("selected");
+      id5.innerHTML = computermove;
+  }else if(id6ifyou()){
+      id6.classList.add("selected");
+      id6.innerHTML = computermove;
+  }else if(id7ifyou()){
+      id7.classList.add("selected");
+      id7.innerHTML = computermove;
+  }else if(id8ifyou()){
+      id8.classList.add("selected");
+      id8.innerHTML = computermove;
+  }else if(id9ifyou()){
+      id9.classList.add("selected");
+      id9.innerHTML = computermove;
   }else{
     randomselect(computermove);
   }
   
 
-  function id1if(){
+  function id1ifcomp(){
     if((id2.innerHTML === computermove && id3.innerHTML === computermove) || (id3.innerHTML === computermove && id2.innerHTML === computermove) ||
     (id4.innerHTML === computermove && id7.innerHTML === computermove) || (id7.innerHTML === computermove && id4.innerHTML === computermove) ||
     (id5.innerHTML === computermove && id9.innerHTML === computermove) || (id9.innerHTML === computermove && id5.innerHTML === computermove)){
@@ -188,20 +215,22 @@ function randomcomputermove(computermove,yourmove){
       } else{
         return false;
       }
-    }else if(
-      (id2.innerHTML === yourmove && id3.innerHTML === yourmove) || (id3.innerHTML === yourmove && id2.innerHTML === yourmove) ||
-      (id4.innerHTML === yourmove && id7.innerHTML === yourmove) || (id7.innerHTML === yourmove && id4.innerHTML === yourmove) ||
-      (id5.innerHTML === yourmove && id9.innerHTML === yourmove) || (id9.innerHTML === yourmove && id5.innerHTML === yourmove)){
-          if(id1.innerHTML === ""){
-            return true;
+    }}
+  function id1ifyou(){
+      if(
+        (id2.innerHTML === yourmove && id3.innerHTML === yourmove) || (id3.innerHTML === yourmove && id2.innerHTML === yourmove) ||
+        (id4.innerHTML === yourmove && id7.innerHTML === yourmove) || (id7.innerHTML === yourmove && id4.innerHTML === yourmove) ||
+        (id5.innerHTML === yourmove && id9.innerHTML === yourmove) || (id9.innerHTML === yourmove && id5.innerHTML === yourmove)){
+            if(id1.innerHTML === ""){
+              return true;
+            }
+            else{
+              return false;
+            }
           }
-          else{
-            return false;
-          }
-        }
     }
 
-  function id2if(){
+  function id2ifcomp(){
     if((id1.innerHTML === computermove && id3.innerHTML === computermove || id3.innerHTML === computermove && id1.innerHTML === computermove) ||
       (id5.innerHTML === computermove && id8.innerHTML === computermove || id8.innerHTML === computermove && id5.innerHTML === computermove)){
         if(id2.innerHTML === ""){
@@ -209,7 +238,10 @@ function randomcomputermove(computermove,yourmove){
         }  else{
           return false;
         }
-      }else if((id1.innerHTML === yourmove && id3.innerHTML === yourmove || id3.innerHTML === yourmove && id1.innerHTML === yourmove) ||
+      }
+    }
+  function id2ifyou(){
+    if((id1.innerHTML === yourmove && id3.innerHTML === yourmove || id3.innerHTML === yourmove && id1.innerHTML === yourmove) ||
         (id5.innerHTML === yourmove && id8.innerHTML === yourmove || id8.innerHTML === yourmove && id5.innerHTML === yourmove)){
           if(id2.innerHTML === ""){
             return true;
@@ -218,9 +250,10 @@ function randomcomputermove(computermove,yourmove){
             return false;
           }
       }
-  }
+    }     
 
-  function id3if(){
+
+  function id3ifcomp(){
     if((id1.innerHTML === computermove && id2.innerHTML === computermove)||
     (id6.innerHTML === computermove && id9.innerHTML === computermove) ||
     (id7.innerHTML === computermove && id5.innerHTML === computermove)){
@@ -229,7 +262,10 @@ function randomcomputermove(computermove,yourmove){
        } else{
         return false;
       }
-      }else if((id1.innerHTML === yourmove && id2.innerHTML === yourmove) ||
+      }
+    }
+    function id3ifyou(){
+      if((id1.innerHTML === yourmove && id2.innerHTML === yourmove) ||
        (id6.innerHTML === yourmove && id9.innerHTML === yourmove) ||
        (id7.innerHTML === yourmove && id5.innerHTML === yourmove)){
         if(id3.innerHTML === ""){
@@ -239,9 +275,9 @@ function randomcomputermove(computermove,yourmove){
            return false;
          }
        }
-  }
+    } 
 
-  function id4if(){
+  function id4ifcomp(){
     if((id7.innerHTML === computermove && id1.innerHTML === computermove)||
       (id5.innerHTML === computermove && id6.innerHTML === computermove)){
         if(id4.innerHTML === ""){
@@ -251,7 +287,9 @@ function randomcomputermove(computermove,yourmove){
           return false;
         }
       }
-      else if((id7.innerHTML === yourmove && id1.innerHTML === yourmove) ||
+  }
+  function id4ifyou(){
+    if((id7.innerHTML === yourmove && id1.innerHTML === yourmove) ||
          (id5.innerHTML === yourmove && id6.innerHTML === yourmove)){
             if(id4.innerHTML === ""){
               return true;
@@ -260,9 +298,10 @@ function randomcomputermove(computermove,yourmove){
               return false;
             }
         }
-  }
+  } 
 
-  function id5if(){
+
+  function id5ifcomp(){
     if((id4.innerHTML === computermove && id6.innerHTML === computermove)||
     (id2.innerHTML === computermove && id8.innerHTML === computermove) ||
     (id7.innerHTML === computermove && id3.innerHTML === computermove) ||
@@ -273,7 +312,10 @@ function randomcomputermove(computermove,yourmove){
       else{
         return false;
       }
-    }else if((id4.innerHTML === yourmove && id6.innerHTML === yourmove) ||
+    }
+   }
+   function id5ifyou(){
+    if((id4.innerHTML === yourmove && id6.innerHTML === yourmove) ||
       (id2.innerHTML === yourmove && id8.innerHTML === yourmove) ||
       (id7.innerHTML === yourmove && id3.innerHTML === yourmove) ||
       (id1.innerHTML === yourmove && id9.innerHTML === yourmove)){
@@ -284,9 +326,9 @@ function randomcomputermove(computermove,yourmove){
           return false;
         }
       }
-  }
+   } 
 
-  function id6if(){
+  function id6ifcomp(){
     if((id4.innerHTML === computermove && id5.innerHTML === computermove) ||
     (id3.innerHTML === computermove && id9.innerHTML === computermove)){
       if(id6.innerHTML === ""){
@@ -295,18 +337,21 @@ function randomcomputermove(computermove,yourmove){
        else{
         return false;
       }
-      }else if((id4.innerHTML === yourmove && id5.innerHTML === yourmove) ||
-       (id3.innerHTML === yourmove && id9.innerHTML === yourmove)){
-        if(id6.innerHTML === ""){
-          return true;
-         }
-         else{
-           return false;
-         }
-       }
+      }
+  }
+  function id6ifyou(){
+    if((id4.innerHTML === yourmove && id5.innerHTML === yourmove) ||
+    (id3.innerHTML === yourmove && id9.innerHTML === yourmove)){
+     if(id6.innerHTML === ""){
+       return true;
+      }
+      else{
+        return false;
+      }
+    }
   }
 
-  function id7if(){
+  function id7ifcomp(){
     if((id5.innerHTML === computermove && id3.innerHTML === computermove) || (id3.innerHTML === computermove && id5.innerHTML === computermove) ||
     (id4.innerHTML === computermove && id1.innerHTML === computermove) || (id1.innerHTML === computermove && id4.innerHTML === computermove) ||
     (id8.innerHTML === computermove && id9.innerHTML === computermove) || (id9.innerHTML === computermove && id8.innerHTML === computermove)){
@@ -315,7 +360,10 @@ function randomcomputermove(computermove,yourmove){
       }  else{
         return false;
       }
-    }else if((id5.innerHTML === yourmove && id3.innerHTML === yourmove) || (id3.innerHTML === yourmove && id5.innerHTML === yourmove) ||
+    }
+   } 
+   function id7ifyou(){
+    if((id5.innerHTML === yourmove && id3.innerHTML === yourmove) || (id3.innerHTML === yourmove && id5.innerHTML === yourmove) ||
         (id4.innerHTML === yourmove && id1.innerHTML === yourmove) || (id1.innerHTML === yourmove && id4.innerHTML === yourmove) ||
         (id8.innerHTML === yourmove && id9.innerHTML === yourmove) || (id9.innerHTML === yourmove && id8.innerHTML === yourmove)){
           if(id7.innerHTML === ""){
@@ -325,9 +373,9 @@ function randomcomputermove(computermove,yourmove){
             return false;
           }
       }
-  }
+   } 
 
-  function id8if(){
+  function id8ifcomp(){
     if((id7.innerHTML === computermove && id9.innerHTML === computermove)||
     (id2.innerHTML === computermove && id5.innerHTML === computermove)){
       if(id8.innerHTML === ""){
@@ -336,7 +384,10 @@ function randomcomputermove(computermove,yourmove){
       else{
         return false;
       }
-    }else if((id7.innerHTML === yourmove && id9.innerHTML === yourmove) ||
+    }
+   }
+   function id8ifyou(){
+    if((id7.innerHTML === yourmove && id9.innerHTML === yourmove) ||
       (id2.innerHTML === yourmove && id5.innerHTML === yourmove)){
         if(id8.innerHTML === ""){
           return true;
@@ -345,9 +396,9 @@ function randomcomputermove(computermove,yourmove){
           return false;
         }
       }
-  }
+   } 
 
-  function id9if(){
+  function id9ifcomp(){
     if((id7.innerHTML === computermove && id8.innerHTML === computermove) ||
     (id3.innerHTML === computermove && id6.innerHTML === computermove) ||
     (id1.innerHTML === computermove && id5.innerHTML === computermove)){
@@ -357,7 +408,10 @@ function randomcomputermove(computermove,yourmove){
        else{
         return false;
       }
-      }else if((id7.innerHTML === yourmove && id8.innerHTML === yourmove) ||
+      }
+   }
+   function id9ifyou(){
+    if((id7.innerHTML === yourmove && id8.innerHTML === yourmove) ||
         (id3.innerHTML === yourmove && id6.innerHTML === yourmove) ||
         (id1.innerHTML === yourmove && id5.innerHTML === yourmove)){
           if(id9.innerHTML === ""){
@@ -367,7 +421,8 @@ function randomcomputermove(computermove,yourmove){
              return false;
            }
        }
-  }
+   } 
+  
 
   function randomselect(computermove){
     let randomMove = Math.random();

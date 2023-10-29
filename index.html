@@ -7,20 +7,23 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  
-  <div class="container">
-    <div class="header">
-      <h1>Let's Play Tic Tac Toe!</h1>
-   </div>
-    <div class="button-container">
-      <button class="button" id="p2p-button">
-        <div class="p2p">Player To Player</div>
-      </button>
-      <button class="button">
-        <div class="vsComp" id="pvc-button">Player Vs Computer</div>
-      </button>
+  <img class="background" src="/tic-tac-toe-seamless-background-on-dark-blue-illustration-vector.jpg" alt="" srcset="">
+
+  <section>
+    <div class="container">
+      <div class="header">
+        <h1><span>Let's Play</span> Tic Tac Toe!</h1>
+      </div>
+      <div class="button-container">
+        <button class="button" id="p2p-button">
+          <div class="p2p">Player To Player</div>
+        </button>
+        <button class="button">
+          <div class="vsComp" id="pvc-button">Player Vs Computer</div>
+        </button>
+      </div>
     </div>
-  </div>
+  </section>
   <script>
     document.getElementById("p2p-button").addEventListener('click',()=>{
       location.href ="/p2p.html";

@@ -1,18 +1,146 @@
-body{
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.background{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  contain: content;
+  opacity: .7;
+}
+
+section{
   display: flex;
-  align-items: center;
   justify-content: center;
-  justify-items: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
 }
 
 .container{
-  border: 2px lightblue;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 800px;
+  justify-content: space-between;
+  align-items: center; 
+  border-radius: 73% 27% 70% 30% / 52% 17% 83% 48% ;
+  background-color:lightblue;
+}
+.header{
+  display: flex;
+  height: 50%;
+  color: darkblue;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding-top: 10%;
 }
 
 .button-container{
   display: flex;
+  flex-direction: row;
+  row-gap: 2%;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  justify-items: center;
-  column-gap: 5px;
+  padding:0 15%;
+  height: 50%;
+  width: 100%;
 }
+
+button{
+  height: 30%;
+  width: 48%;
+  border:none;
+  border-radius: 73% 27% 70% 30% / 52% 60% 40% 48% ;
+}
+.p2p , .vsComp{
+  font-size: 2em;
+}
+
+.button:hover{
+  cursor: pointer;
+  border-radius: 10% 90% 19% 81% / 45% 41% 59% 55%;
+  color:red;
+}
+
+@media (max-width: 768px) and (min-width: 455px){
+  .container{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 600px;
+    justify-content: space-between;
+    align-items: center; 
+    border-radius: 73% 27% 70% 30% / 52% 17% 83% 48% ;
+    background-color:lightgray;
+  }
+  .header{
+    display: flex;
+    height: 50%;
+    color: darkblue;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-top: 10%;
+  }
+  button{
+    height: 30%;
+    width: 48%;
+    border:none;
+    border-radius: 73% 27% 70% 30% / 52% 60% 40% 48% ;
+  }
+  .p2p , .vsComp{
+    font-size: 1em;
+  }
+
+}
+
+@media (max-width: 454px) and (min-width: 368px){
+  .container{
+    display: flex;
+    flex-direction: column;
+    height: 190px;
+    width: 380px;
+    justify-content: space-between;
+    align-items: center; 
+    border-radius: 73% 27% 70% 30% / 52% 17% 83% 48% ;
+    background-color:lightsteelblue;
+  }
+  .header{
+    display: flex;
+    height: 50%;
+    color: darkblue;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-top: 10%;
+  }
+  button{
+    height: 30%;
+    width: 48%;
+    border:none;
+    border-radius: 73% 27% 70% 30% / 52% 60% 40% 48% ;
+  }
+  .p2p , .vsComp{
+    font-size: 1em;
+  }
+  .button-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1%;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 15%;
+    height: 50%;
+    width: 100%;
+  }
+  span{
+    display: none;
+  }
+}
+

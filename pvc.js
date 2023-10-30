@@ -24,7 +24,7 @@
         document.querySelector('.empty').innerHTML =
             `
             <div class="choose-move-container">
-              <div>Choose your Move!</div>
+              <div class="chooseyourmove">Choose your Move!</div>
               <div>
                 <button class="chosenX">I choose X</button>
                 <button class="chosenO">I choose O</button>

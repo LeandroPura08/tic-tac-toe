@@ -15,13 +15,15 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  column-gap: 3%;
   align-items: center;
   justify-content: center;
   justify-items: center;
   height: 300px;
   width: 300px;
-  background: red;
+  background: lightsalmon;
   opacity: .9;
+  border-radius: 46% 54% 47% 53% / 69% 33% 67% 31% ;
 }
 .buttons{
 }
@@ -34,8 +36,15 @@
   top: 1%;
   right: 1%;
   justify-content: center;
+  border-radius: 11% 89% 15% 85% / 69% 45% 55% 31% ;
+  background-color: red;
 }
 .return:hover{
   background-color: brown;
   cursor: pointer;
+}
+.chooseyourmove{
+  font-family: ;
+  font-size: 1.5rem;
+  height: 15%;
 }
